@@ -1,0 +1,32 @@
+name: 'rewritable-issue-comment'
+description: 'Rewritable issue / PR comment action'
+author: 'shoppingJaws'
+branding:
+  icon: 'edit'
+  color: 'gray-dark'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.issueNumber }}
+    - ${{ inputs.owner }}
+    - ${{ inputs.repository }}
+    - ${{ inputs.commentId }}
+    - ${{ inputs.key }}
+inputs:
+  issueNumber:
+    description: 'Issue / PR number'
+    required: true
+  owner:
+    description: 'Repository owner'
+    required: true
+  repository:
+    description: 'Repository name'
+    required: true
+  commentId:
+    description: 'Id to be used to identify the comment'
+    required: true
+  key:
+    description: 'Key to be used to identify metadata of the comment'
+    required: false
+    default: 'actions-dashboard-comment'
