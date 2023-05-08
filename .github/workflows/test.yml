@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: rewritable-issue-comment
-        uses: nakamuloud/actions-rewritable-comment@v0.0.2
+        uses: nakamuloud/actions-rewritable-comment@main
