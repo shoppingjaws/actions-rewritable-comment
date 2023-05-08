@@ -1,0 +1,9 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  workflow_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: rewritable-issue-comment
+      uses: nakamuloud/actions-rewritable-comment@v0.0.1
