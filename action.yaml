@@ -16,16 +16,16 @@ runs:
 inputs:
   issueNumber:
     description: 'Issue / PR number'
-    required: true
+    required: false
   owner:
     description: 'Repository owner'
-    required: true
+    required: false
   repository:
     description: 'Repository name'
-    required: true
+    required: false
   commentId:
     description: 'Id to be used to identify the comment'
-    required: true
+    required: false
   key:
     description: 'Key to be used to identify metadata of the comment'
     required: false
