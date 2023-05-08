@@ -1,6 +1,7 @@
 FROM golang:1.18.0-alpine3.14
-
-COPY ./ ./
-CMD go mod tidy
-RUN ls
-ENTRYPOINT ["entrypoint.sh"]
+WORKDIR /app
+COPY ./ /app/
+CMD go mod init \
+    go mod tidy
+RUN ["chmod", "+x", "./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
