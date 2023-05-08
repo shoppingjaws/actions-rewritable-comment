@@ -9,4 +9,4 @@ jobs:
       - name: rewritable-issue-comment
         uses: nakamuloud/actions-rewritable-comment@main
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

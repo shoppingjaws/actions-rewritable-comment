@@ -7,26 +7,26 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  # args:
-  #   - ${{ inputs.issueNumber }}
-  #   - ${{ inputs.owner }}
-  #   - ${{ inputs.repository }}
-  #   - ${{ inputs.commentId }}
-  #   - ${{ inputs.key }}
-# inputs:
-#   issueNumber:
-#     description: 'Issue / PR number'
-#     required: false
-#   owner:
-#     description: 'Repository owner'
-#     required: false
-#   repository:
-#     description: 'Repository name'
-#     required: false
-#   commentId:
-#     description: 'Id to be used to identify the comment'
-#     required: false
-#   key:
-#     description: 'Key to be used to identify metadata of the comment'
-#     required: false
-#     default: 'actions-dashboard-comment'
+  args:
+    - ${{ inputs.issueNumber }}
+    - ${{ inputs.owner }}
+    - ${{ inputs.repository }}
+    - ${{ inputs.commentId }}
+    - ${{ inputs.key }}
+inputs:
+  issueNumber:
+    description: 'Issue / PR number'
+    required: false
+  owner:
+    description: 'Repository owner'
+    required: false
+  repository:
+    description: 'Repository name'
+    required: false
+  commentId:
+    description: 'Id to be used to identify the comment'
+    required: false
+  key:
+    description: 'Key to be used to identify metadata of the comment'
+    required: false
+    default: 'actions-dashboard-comment'

@@ -21,9 +21,7 @@ type metadata struct {
 }
 
 func getClient(ctx context.Context) (*github.Client, error) {
-	token := os.Getenv("GH_TOKEN")
-	print(token)
-	// user := os.Getenv("GH_REPO")
+	token := os.Getenv("GITHUB_TOKEN")
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
 	)
