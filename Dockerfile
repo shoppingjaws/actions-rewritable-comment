@@ -4,4 +4,4 @@ COPY ./ /github/workspace/
 CMD go mod init \
     go mod tidy
 RUN ["chmod", "+x", "./entrypoint.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/github/workspace/entrypoint.sh"]
