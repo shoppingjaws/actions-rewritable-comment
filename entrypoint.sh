@@ -15,7 +15,7 @@ if [ -z "$ISSUE_NUMBER" ]; then
   ISSUE_NUMBER=${ISSUE_NUMBER##*/}
   echo $ISSUE_NUMBER
 fi
-
+env
 echo OWNER: "${OWNER}"
 echo REPOSITORY: "${REPOSITORY}"
 echo ISSUE_NUMBER: "${ISSUE_NUMBER}"
