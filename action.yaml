@@ -8,27 +8,27 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.issue_number }}
-    - ${{ inputs.owner }}
-    - ${{ inputs.repository }}
-    - ${{ inputs.commentId }}
-    - ${{ inputs.key }}
+    - ${{ inputs.ISSUE_NUMBER }}
+    - ${{ inputs.OWNER }}
+    - ${{ inputs.REPOSITORY }}
+    - ${{ inputs.COMMENT_ID }}
+    - ${{ inputs.KEY }}
     - ${{ inputs.VALUE }}
     - ${{ inputs.GITHUB_TOKEN }}
 inputs:
-  issue_number:
+  ISSUE_NUMBER:
     description: 'Issue / PR number'
     required: false
-  owner:
+  OWNER:
     description: 'Repository owner'
     required: false
-  repository:
+  REPOSITORY:
     description: 'Repository name'
     required: false
-  commentId:
+  COMMENT_ID:
     description: 'Id to be used to identify the comment'
     required: false
-  key:
+  KEY:
     description: 'Key to be used to identify metadata of the comment'
     required: false
     default: 'actions-rewritable-comment'
