@@ -1,23 +1,26 @@
 #!/bin/sh
 cd /app
-
-if [ -z "$OWNER" ]; then
-  OWNER=${GITHUB_REPOSITORY_OWNER}
+if [ -z "$INPUT_OWNER" ]; then
+  INPUT_OWNER=${GITHUB_REPOSITORY_OWNER}
 fi
 
-if [ -z "$REPOSITORY" ]; then
-  REPOSITORY=${GITHUB_REPOSITORY#*/}
+if [ -z "$INPUT_REPOSITORY" ]; then
+  INPUT_REPOSITORY=${GITHUB_REPOSITORY#*/}
 fi
 
-if [ -z "$ISSUE_NUMBER" ]; then
-  ISSUE_NUMBER=${GITHUB_REF%/*}
-  ISSUE_NUMBER=${ISSUE_NUMBER##*/}
+if [ -z "$INPUT_ISSUE_NUMBER" ]; then
+  INPUT_ISSUE_NUMBER=${GITHUB_REF%/*}
+  INPUT_ISSUE_NUMBER=${INPUT_ISSUE_NUMBER##*/}
 fi
 
-echo OWNER: "${OWNER}"
-echo REPOSITORY: "${REPOSITORY}"
-echo ISSUE_NUMBER: "${ISSUE_NUMBER}"
-echo "<!-- KEY : COMMENT_ID --> : " "<!-- ${KEY} : ${COMMENT_ID} -->"
-echo VALUE: "${VALUE}"
+if [ -z "$INPUT_VALUE" ]; then
+  INPUT_VALUE=${VALUE}
+fi
 
-go run src/main.go -owner ${OWNER} -repository ${REPOSITORY} -commentId ${COMMENT_ID} -issueNumber ${ISSUE_NUMBER} -key ${KEY:-default} -value ${VALUE}
+echo INPUT_OWNER: "${INPUT_OWNER}"
+echo INPUT_REPOSITORY: "${INPUT_REPOSITORY}"
+echo INPUT_ISSUE_NUMBER: "${INPUT_ISSUE_NUMBER}"
+echo INPUT_VALUE: "${INPUT_VALUE}"
+echo "<!-- INPUT_KEY : INPUT_COMMENT_ID --> : " "<!-- ${INPUT_KEY} : ${INPUT_COMMENT_ID} -->"
+
+go run src/main.go -owner ${INPUT_OWNER} -repository ${INPUT_REPOSITORY} -commentId ${INPUT_COMMENT_ID} -issueNumber ${INPUT_ISSUE_NUMBER} -key ${INPUT_KEY:-default} -value ${INPUT_VALUE}

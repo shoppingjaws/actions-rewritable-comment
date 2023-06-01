@@ -3,12 +3,13 @@ on:
   pull_request:
 permissions:
   issues: write
+  pull-requests: write
 jobs:
   workflow_test:
     runs-on: ubuntu-latest
     steps:
       - name: rewritable-issue-comment
-        uses: nakamuloud/actions-rewritable-comment@main
+        uses: nakamuloud/actions-rewritable-comment@feat3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALUE: 'Hello World'
