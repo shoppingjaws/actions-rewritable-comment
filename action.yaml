@@ -13,7 +13,8 @@ runs:
     - ${{ inputs.repository }}
     - ${{ inputs.commentId }}
     - ${{ inputs.key }}
-    - ${{ inputs.value }}
+    - ${{ inputs.VALUE }}
+    - ${{ inputs.GITHUB_TOKEN }}
 inputs:
   issue_number:
     description: 'Issue / PR number'
@@ -31,6 +32,9 @@ inputs:
     description: 'Key to be used to identify metadata of the comment'
     required: false
     default: 'actions-rewritable-comment'
-  value:
+  VALUE:
     description: 'Value to be posted'
+    required: true
+  GITHUB_TOKEN:
+    description: 'The GitHub token to use to create a new comment with. Use `secrets.GITHUB_TOKEN` to inject it'
     required: true
