@@ -29,4 +29,4 @@ inputs:
   key:
     description: 'Key to be used to identify metadata of the comment'
     required: false
-    default: 'actions-dashboard-comment'
+    default: 'actions-rewritable-comment'
