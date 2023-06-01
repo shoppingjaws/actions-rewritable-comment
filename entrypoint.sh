@@ -1,6 +1,5 @@
 #!/bin/sh
 cd /app
-env
 if [ -z "$INPUT_OWNER" ]; then
   INPUT_OWNER=${GITHUB_REPOSITORY_OWNER}
 fi
