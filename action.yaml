@@ -27,7 +27,8 @@ inputs:
     required: false
   COMMENT_ID:
     description: 'Id to be used to identify the comment'
-    required: false
+    required: true
+    default: 'default'
   KEY:
     description: 'Key to be used to identify metadata of the comment'
     required: false
