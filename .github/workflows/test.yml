@@ -1,9 +1,7 @@
 on:
-  workflow_dispatch:
-    inputs:
-      issue_number:
-        description: 'Issue number'
-        required: true
+  pull_request:
+    branches:
+      - main
 permissions:
   issues: write
 jobs:
@@ -15,4 +13,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALUE: 'Hello World'
-          ISSUE_NUMBER: ${{ github.event.inputs.issue_number }}
