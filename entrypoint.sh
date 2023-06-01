@@ -1,6 +1,6 @@
 #!/bin/sh
 cd /app
-
+env
 if [ -z "$INPUT_OWNER" ]; then
   INPUT_OWNER=${GITHUB_REPOSITORY_OWNER}
 fi
@@ -17,7 +17,7 @@ fi
 echo INPUT_OWNER: "${INPUT_OWNER}"
 echo INPUT_REPOSITORY: "${INPUT_REPOSITORY}"
 echo INPUT_ISSUE_NUMBER: "${INPUT_ISSUE_NUMBER}"
-echo "<!-- INPUT_KEY : INPUT_COMMENT_ID --> : " "<!-- ${INPUT_KEY} : ${INPUT_COMMENT_ID} -->"
 echo INPUT_VALUE: "${INPUT_VALUE}"
+echo "<!-- INPUT_KEY : INPUT_COMMENT_ID --> : " "<!-- ${INPUT_KEY} : ${INPUT_COMMENT_ID} -->"
 
 go run src/main.go -owner ${INPUT_OWNER} -repository ${INPUT_REPOSITORY} -commentId ${INPUT_COMMENT_ID} -issueNumber ${INPUT_ISSUE_NUMBER} -key ${INPUT_KEY:-default} -value ${INPUT_VALUE}
