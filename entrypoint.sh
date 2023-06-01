@@ -11,7 +11,9 @@ fi
 
 if [ -z "$INPUT_ISSUE_NUMBER" ]; then
   INPUT_ISSUE_NUMBER=${GITHUB_REF%/*}
+  echo $INPUT_ISSUE_NUMBER
   INPUT_ISSUE_NUMBER=${ISSUE_NUMBER##*/}
+  echo $INPUT_ISSUE_NUMBER
 fi
 
 if [ -z "$INPUT_VALUE" ]; then
