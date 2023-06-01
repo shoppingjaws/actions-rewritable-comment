@@ -1,3 +1,4 @@
+name: rewritable-issue-comment
 on:
   pull_request:
 permissions:

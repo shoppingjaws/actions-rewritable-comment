@@ -20,4 +20,4 @@ echo ISSUE_NUMBER: "${ISSUE_NUMBER}"
 echo "<!-- KEY : COMMENT_ID --> : " "<!-- ${KEY} : ${COMMENT_ID} -->"
 echo VALUE: "${VALUE}"
 
-go run src/main.go -owner ${OWNER} -repository ${REPOSITORY} -commentId rewritable-comment -issueNumber ${ISSUE_NUMBER} -key ${KEY:-default} -value ${VALUE}
+go run src/main.go -owner ${OWNER} -repository ${REPOSITORY} -commentId ${COMMENT_ID} -issueNumber ${ISSUE_NUMBER} -key ${KEY:-default} -value ${VALUE}
