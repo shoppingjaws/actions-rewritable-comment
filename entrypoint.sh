@@ -1,6 +1,6 @@
 #!/bin/sh
 env
-cd /app
+# cd /app
 
 if [ -z "$INPUT_REPOSITORY" ]; then
   INPUT_OWNER=${GITHUB_REPOSITORY_OWNER}
@@ -14,6 +14,8 @@ if [ -z "$INPUT_ISSUE_NUMBER" ]; then
   INPUT_ISSUE_NUMBER=${GITHUB_REF%/*}
 fi
 
-echo env | grep INPUT
+echo INPUT_OWNER: "${INPUT_OWNER}"
+echo INPUT_REPOSITORY: "${INPUT_REPOSITORY}"
+echo INPUT_ISSUE_NUMBER: "${INPUT_ISSUE_NUMBER}"
 
 go run src/main.go -owner ${INPUT_OWNER} -repository ${INPUT_REPOSITORY} -commentId rewritable-comment -issueNumber ${INPUT_ISSUE_NUMBER} -key ${INPUT_KEY:-default} -value ${INPUT_VALUE}
