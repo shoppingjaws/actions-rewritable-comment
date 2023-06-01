@@ -1,5 +1,4 @@
 #!/bin/sh
-env
 cd /app
 
 if [ -z "$OWNER" ]; then
