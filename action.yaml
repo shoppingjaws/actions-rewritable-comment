@@ -8,14 +8,14 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.issueNumber }}
+    - ${{ inputs.issue_number }}
     - ${{ inputs.owner }}
     - ${{ inputs.repository }}
     - ${{ inputs.commentId }}
     - ${{ inputs.key }}
     - ${{ inputs.value }}
 inputs:
-  issueNumber:
+  issue_number:
     description: 'Issue / PR number'
     required: false
   owner:
