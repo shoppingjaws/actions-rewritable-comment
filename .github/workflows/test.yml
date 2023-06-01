@@ -1,12 +1,5 @@
 on:
-  workflow_dispatch:
-    inputs:
-      issue_number:
-        description: 'Issue number'
-        required: true
   pull_request:
-    branches:
-      - main
 permissions:
   issues: write
 jobs:
