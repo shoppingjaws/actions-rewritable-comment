@@ -87,3 +87,6 @@ Will posts / edits below comment to the Issue / PR (id=1) at example/dotfiles re
 Hello World
 <!-- key:comment -->
 ```
+# Lisence
+
+This project is licensed under the MIT License, see the LICENSE.txt file for details
