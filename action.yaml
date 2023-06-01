@@ -13,6 +13,7 @@ runs:
     - ${{ inputs.repository }}
     - ${{ inputs.commentId }}
     - ${{ inputs.key }}
+    - ${{ inputs.value }}
 inputs:
   issueNumber:
     description: 'Issue / PR number'
@@ -30,3 +31,6 @@ inputs:
     description: 'Key to be used to identify metadata of the comment'
     required: false
     default: 'actions-rewritable-comment'
+  value:
+    description: 'Value to be posted'
+    required: true

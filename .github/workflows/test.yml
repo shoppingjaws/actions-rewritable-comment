@@ -14,5 +14,5 @@ jobs:
         uses: nakamuloud/actions-rewritable-comment@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BODY: 'Hello World'
+          VALUE: 'Hello World'
           ISSUE_NUMBER: ${{ github.event.inputs.issue_number }}
