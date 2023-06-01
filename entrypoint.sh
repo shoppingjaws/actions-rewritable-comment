@@ -11,7 +11,9 @@ fi
 
 if [ -z "$ISSUE_NUMBER" ]; then
   ISSUE_NUMBER=${GITHUB_REF%/*}
+  echo $ISSUE_NUMBER
   ISSUE_NUMBER=${ISSUE_NUMBER##*/}
+  echo $ISSUE_NUMBER
 fi
 
 echo OWNER: "${OWNER}"
