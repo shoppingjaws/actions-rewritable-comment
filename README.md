@@ -5,8 +5,9 @@
 
 This Actions allows you to create editable comments on Issue / PR comments.
 No more `outdating` past comments every time.
+<img width="859" alt="スクリーンショット 2023-06-01 14 59 46 2" src="https://github.com/nakamuloud/actions-rewritable-comment/assets/25874783/c5df1b6d-db9a-4c22-85be-301f567958c3">
 
-![](./assets/outdated.png)
+
 
 # Getting Started
 
