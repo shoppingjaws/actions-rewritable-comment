@@ -2,11 +2,11 @@
 env
 cd /app
 
-if [ -z "$INPUT_REPOSITORY" ]; then
+if [ -z "$INPUT_OWNER" ]; then
   INPUT_OWNER=${GITHUB_REPOSITORY_OWNER}
 fi
 
-if [ -z "$INPUT_OWNER" ]; then
+if [ -z "$INPUT_REPOSITORY" ]; then
   INPUT_REPOSITORY=${GITHUB_REPOSITORY#*/}
 fi
 
